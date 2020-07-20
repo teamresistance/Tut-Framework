@@ -1,30 +1,48 @@
 package frc.io.hardware;
 
-import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
-import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
-
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Relay;
+import frc.io.hardware.hdw_util.*;
 
+/**
+ * IO stores all of the objects that represent physical components of the robot,
+ * organized by subsystem.
+ */
 public class IO {
-      // navX
-      public static NavX navX = new NavX();
 
-      // PDP
-      public static PowerDistributionPanel pdp = new PowerDistributionPanel(21);
-  
-      // Air
-      public static Compressor compressor = new Compressor(22);
-      public static Relay compressorRelay = new Relay(0);
-  
-      // Drive
-      public static WPI_TalonSRX drvMasterTSRX_L = new WPI_TalonSRX(1);    //Cmds left wheels.  Includes encoders
-      public static WPI_TalonSRX drvMasterTSRX_R = new WPI_TalonSRX(5);  //Cmds right wheels.  Includes encoders
-      public static final double drvMasterTPF_L = 428.0;   //1024 t/r (0.5' * 3.14)/r 9:60 gr
-      public static final double drvMasterTPF_R = 428.0;   //1024 t/r (0.5' * 3.14)/r 9:60 gr
-  
-      public static WPI_VictorSPX drvFollowerVSPX_L =  new WPI_VictorSPX(2);  //Resrvd 3 & 4 maybe
-      public static WPI_VictorSPX drvFollowerVSPX_R = new WPI_VictorSPX(6);  //Resrvd 7 & 8 maybe
-  
+    // NavX
+    public static NavX navX = new NavX();
+
+    // PDP
+    public static PowerDistributionPanel pdp = new PowerDistributionPanel(21);
+
+    // Air
+    public static Compressor compressor = new Compressor(22);
+    public static Relay compressorRelay = new Relay(0);
+
+    // Drive, drive motors are usually stored/created in this section
+    public static TalonSRX left = new TalonSRX(0);
+    public static TalonSRX right = new TalonSRX(1);
+
+    // ExampleSubsystem, all sensors, motors, etc. for this subsystem are
+    // created/stored here
+    public static ISolenoid exampleSole = new InvertibleSolenoid(22, 4);
+    public static TalonSRX exampleTalon = new TalonSRX(3);
+    public static InvertibleDigitalInput exampleSensor = new InvertibleDigitalInput(0, false);
+
+    /**
+     * Used for any necessary initialization of any of these components.
+     */
+    public static void init() {
+
+    }
+
+    /**
+     * Used for any necessary periodic update of any of these components.
+     */
+    public static void update() {
+
+    }
 }

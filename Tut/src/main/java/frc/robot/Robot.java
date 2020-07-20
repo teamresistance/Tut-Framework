@@ -8,9 +8,10 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-
-//The subsystems folder needs to be imported before it can be used within this class
+import frc.io.hardware.IO;
 import frc.robot.subsystems.*;
+
+import edu.wpi.first.wpilibj.Relay;
 
 public class Robot extends TimedRobot {
 
@@ -20,13 +21,17 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void robotInit() {
+    IO.init();
   }
 
   /**
-   * This function is run periodically all the time while the robot is on.  
+   * This function is run periodically all the time while the robot is on.
    */
   @Override
   public void robotPeriodic() {
+    IO.update();
+    
+    IO.compressorRelay.set(IO.compressor.enabled() ? Relay.Value.kForward : Relay.Value.kOff);
 
   }
 
@@ -41,8 +46,8 @@ public class Robot extends TimedRobot {
   }
 
   /**
-   * This function is run periodically during the autonmous period and should contain
-   * all the code to control the robot autonomously.
+   * This function is run periodically during the autonmous period and should
+   * contain all the code to control the robot autonomously.
    */
   @Override
   public void autonomousPeriodic() {
@@ -52,17 +57,18 @@ public class Robot extends TimedRobot {
    * This function is run when the teleop is first started up and should be used
    * for any telop initialization code.
    * 
-   * Teleop = Teleoperated, the period where the driver takes control of the robot.
+   * Teleop = Teleoperated, the period where the driver takes control of the
+   * robot.
    */
   @Override
   public void teleopInit() {
 
-    //Actually applies the initialization code within init()
+    // Actually applies the initialization code within init()
     ExampleSubsystem.init();
 
   }
 
-   /**
+  /**
    * This function is run periodically during the teleop period and should contain
    * all the code to allow the driver to control the robot.
    */
@@ -70,9 +76,9 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
   }
 
-   /**
-   * This function is run when the robot is disabled and should be used
-   * for any initialization code for when the robot is disabled.
+  /**
+   * This function is run when the robot is disabled and should be used for any
+   * initialization code for when the robot is disabled.
    * 
    * ~Currently not used by TR~
    */
@@ -80,8 +86,8 @@ public class Robot extends TimedRobot {
   public void disabledInit() {
   }
 
-   /**
-   * This function is run periodically all the time while the robot is disabled.  
+  /**
+   * This function is run periodically all the time while the robot is disabled.
    * 
    * ~Currently not used by TR~
    */
@@ -90,8 +96,8 @@ public class Robot extends TimedRobot {
   }
 
   /**
-   * This function is run when the test mode is first started up and should
-   * be used for any test mode initialization code.
+   * This function is run when the test mode is first started up and should be
+   * used for any test mode initialization code.
    * 
    * Test mode is a special mode for.... testing (allows for some changes in the
    * Driver Station).
@@ -101,8 +107,8 @@ public class Robot extends TimedRobot {
   }
 
   /**
-   * This function is run periodically in test mode and should contain
-   * all and any test code.
+   * This function is run periodically in test mode and should contain all and any
+   * test code.
    */
   @Override
   public void testPeriodic() {

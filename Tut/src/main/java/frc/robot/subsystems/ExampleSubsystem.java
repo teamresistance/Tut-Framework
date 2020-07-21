@@ -1,11 +1,14 @@
+/**
+ * Desc: An setup of an example subsystem, a class that controls a set of specific actions that have a common theme.
+ */
 package frc.robot.subsystems;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.io.hardware.IO;
-import frc.io.hardware.hdw_util.InvertibleDigitalInput;
+import frc.robot.io.hardware.IO;
+import frc.robot.io.hardware.hdw_util.InvertibleDigitalInput;
 
 public class ExampleSubsystem {
 
@@ -81,7 +84,7 @@ public class ExampleSubsystem {
 
                 cmdUpdate(1.0);
                 if (exSensor.get()) {
-                    exampleBool = true; //waits until the sensor is triggered before propelling to the next state
+                    exampleBool = true; // waits until the sensor is triggered before propelling to the next state
                 }
 
                 break;

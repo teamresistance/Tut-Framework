@@ -1,4 +1,4 @@
-package frc.io.hardware.hdw_util;
+package frc.robot.io.hardware.hdw_util;
 
 import edu.wpi.first.networktables.NetworkTable;
 import edu.wpi.first.networktables.NetworkTableInstance;

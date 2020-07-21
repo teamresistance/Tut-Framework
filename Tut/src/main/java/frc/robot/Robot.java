@@ -8,7 +8,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import frc.io.hardware.IO;
+import frc.robot.io.hardware.IO;
+import frc.robot.io.joysticks.JS_IO;
 import frc.robot.subsystems.*;
 
 import edu.wpi.first.wpilibj.Relay;
@@ -22,6 +23,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotInit() {
     IO.init();
+    JS_IO.init();
   }
 
   /**
@@ -30,7 +32,8 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     IO.update();
-    
+    JS_IO.update();
+
     IO.compressorRelay.set(IO.compressor.enabled() ? Relay.Value.kForward : Relay.Value.kOff);
 
   }
@@ -74,6 +77,8 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
+    // Actually assures the code for controlling this subsystem works as it should
+    ExampleSubsystem.update();
   }
 
   /**

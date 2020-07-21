@@ -1,4 +1,4 @@
-package frc.io.hardware.hdw_util;
+package frc.robot.io.hardware.hdw_util;
 
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;

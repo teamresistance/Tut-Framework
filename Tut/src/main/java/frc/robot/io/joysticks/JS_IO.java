@@ -1,4 +1,4 @@
-package frc.io.joysticks;
+package frc.robot.io.joysticks;
 /*
 Original Author: Joey & Anthony
 Rewite Author: Jim Hofmann
@@ -17,7 +17,7 @@ Desc: Reads joystick (gamePad) values.  Can be used for different stick configur
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
-import frc.io.joysticks.js_util.*;
+import frc.robot.io.joysticks.js_util.*;
 
 /**
  * Similar to IO, JS_IO stores all of the buttons and axis on the Xbox

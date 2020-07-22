@@ -12,12 +12,27 @@ a default (povID may not exist for some combinations) then in povID pass -1 for 
 and a pov value 0, 45, ... 315.
 */
 
-import edu.wpi.first.wpilibj.Joystick;
-
 /**
+ * Original Author: Shreya
+ * Rewite Author: Jim Hofmann
+ * 
+ * Revisions: JCH - 11/6/2019 - rework
+ *            S - 3/6/2017 - Original release
+ * 
+ * Description:
  * This class allows for the creation of an object to represent an "pov" for a
  * joystick (ex: d-pad).
+ * 
+ * Also, allows use of various joystick/gamepad configurations because a Pov object can be 
+ * any type of "pov" on a joystick/gamepad.
+ * 
+ * Constructor gets JS_ID and povID.  But povID is not needed.  However, if it needs to pass
+ * a default (povID may not exist for some combinations) then in povID pass -1 for no press,
+ * and a pov value 0, 45, ... 315.
  */
+
+import edu.wpi.first.wpilibj.Joystick;
+
 public class Pov {
 
     private Joystick joystick;

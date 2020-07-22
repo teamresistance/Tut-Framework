@@ -1,5 +1,11 @@
 /**
- * Desc: An setup of an example subsystem, a class that controls a set of specific actions that have a common theme.
+ * Author: Kinfe
+ * 
+ * Revisions: N/A
+ * 
+ * Description: 
+ * A setup of an example subsystem, a class that controls a set of specific actions that have a common theme 
+ * (subsystem example: controlling a climbing system).
  */
 package frc.robot.subsystems;
 
@@ -36,12 +42,12 @@ public class ExampleSubsystem {
     public static void init() {
         state = 0;
         exampleBool = false;
-        exTalon.set(ControlMode.PercentOutput, 0);
+        cmdUpdate(0);
     }
 
     /**
      * The determinator function changes the state variable depending on conditions
-     * (these include the push of a button, a change of a boolean, etc.)
+     * (these include the push of a button, a change of a boolean, etc.).
      */
     public static void determ() {
         if (exampleBool) {
@@ -94,9 +100,10 @@ public class ExampleSubsystem {
 
                 break;
             default: // Default case exists in case state becomes a number that is not possible, it
-                     // turns things off
+                     // turns things off and outputs that it is in an invalid state
                 cmdUpdate(0.0);
-
+                SmartDashboard.putString("INVALID SUBSYSTEM STATE", "INVALID SUBSYSTEM STATE");
+                System.out.println("INVALID SUBSYSTEM STATE");
                 break;
         }
 

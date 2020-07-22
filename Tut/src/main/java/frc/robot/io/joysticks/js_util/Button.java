@@ -1,22 +1,24 @@
 package frc.robot.io.joysticks.js_util;
-/*
-Original Author: Sherya
-Rewite Author: Jim Hofmann
-History:
-JCH - 11/6/2019 - rework
-S - 3/6/2017 - Original release
-TODO: more testing.  maybe add an array handler?
-Desc: Allows use of various joystick/gamepad configurations.
-Constructor get JS_ID and axisID.  However, if the it needs to pass a default (button may not
-exist for some combinations) then in buttonID pass 100 (even) for true, 101 (odd for false).
-*/
-
-import edu.wpi.first.wpilibj.Joystick;
 
 /**
+ * Original Author: Shreya
+ * Rewite Author: Jim Hofmann
+ * 
+ * Revisions: JCH - 11/6/2019 - rework
+ *            S - 3/6/2017 - Original release
+ * 
+ * Description:
  * This class allows for the creation of an object to represent a button on a
- * joystick.
+ * joystick or gamepad.
+ * 
+ * Also, allows use of various joystick/gamepad configurations because a Button object can be 
+ * any type of button on a joystick/gamepad.
+ * 
+ * Constructor gets JS_ID and axisID.  However, if the it needs to pass a default (button may not
+ * exist for some combinations) then in buttonID pass 100 (even) for true, 101 (odd for false).
  */
+
+import edu.wpi.first.wpilibj.Joystick;
 
 public class Button {
 

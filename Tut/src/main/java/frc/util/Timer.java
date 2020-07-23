@@ -6,16 +6,21 @@ package frc.util;
  * Revisions: Anthony - 1/1/20 - Released
  *            JCH - 3/12/20 - JCH added simple startTimer and renamed variables.
  * 
- * 
  * Descriptions:
- * The timer is set, started, when the a change of variable, cov, occurs
- * for an int or boolean.  The same call is made to set the time and check it.
+ * The timer class allows for the creation of a timer that can be defined by 
+ * an external variable or just by the initially defined delay.
 */
 
 public class Timer {
-    //sets timer in seconds
+
     private double delay; //in seconds
     private double initTime;
+
+    /**
+     * COV = change of variable
+     * 
+     * Triggers are variables that start the actual count toward the delay
+     */
     private int covTrgr = -1;
     private boolean trgr = false;
 
@@ -25,7 +30,7 @@ public class Timer {
         this.delay = delay * 1000;
     }
 
-    // If chg of var, cov, set delay time once, then continue to call for expired time.
+    // If a certain int variable changes: set delay time once, then continue to call for expired time.
     public boolean hasExpired(double delay, int covTrgr){
         if(this.covTrgr != covTrgr){
             initTime = System.currentTimeMillis();
@@ -35,7 +40,7 @@ public class Timer {
         return hasExpired();
     }
 
-    // If chg of var, cov, set delay time once, then continue to call for expired time.
+    // If a certain boolean variable changes: set delay time once, then continue to call for expired time.
     public boolean hasExpired(double delay, boolean trgr){
         if(this.trgr != trgr){
             initTime = System.currentTimeMillis();

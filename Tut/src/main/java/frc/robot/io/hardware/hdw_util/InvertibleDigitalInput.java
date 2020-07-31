@@ -1,17 +1,16 @@
 package frc.robot.io.hardware.hdw_util;
-/*
-Author: Shreya
-History:
-JCH - 11/8/2019 - added additional functions.  isActive/Deactive & onAactive/Deactive
-S - 11/8/2019 - Original Release
-TODO: - Check it out.
-Desc:
-Sets the feedback from a digital input to normally closed.
-*/
-//can this be deleted for tut? I can leave it otherwise
 
 /**
- * This class allows for the creation of objects that represent digital sensors.
+ * Author: Shreya
+ * 
+ * Revisions:
+ * JCH - 11/8/2019 - added additional functions.  isActive/Deactive & onAactive/Deactive
+ * S - 11/8/2019 - Original Release
+ * 
+ * Description:
+ * This class allows for the creation of objects that represent invertible
+ * digital sensors (the digital input can be set to normally closed 
+ * instead of normally open).
  * 
  * Digital sensor examples: banner sensor, limit switch
  */
@@ -23,39 +22,40 @@ public class InvertibleDigitalInput {
     private boolean isInverted;
     private boolean previousState;
 
-    //Makes Object and sets it to either inverted or not
+    // Makes Object and sets it to either inverted or not
     public InvertibleDigitalInput(int channel, boolean invert) {
         isInverted = invert;
         limitSwitch = new DigitalInput(channel);
     }
-    //Returns the state of the object
+
+    // Returns the state of the object
     public boolean get() {
         return (isInverted ? !limitSwitch.get() : limitSwitch.get());
     }
 
     public boolean isActive(boolean currentState) {
         return get();
-    }	
-	
-	public boolean isDeactive(boolean currentState) {
-		return !get();
-	}	
-	
-	public boolean onActive() {
-        if(get() != previousState){
-            previousState =  get();
+    }
+
+    public boolean isDeactive(boolean currentState) {
+        return !get();
+    }
+
+    public boolean onActive() {
+        if (get() != previousState) {
+            previousState = get();
             return true;
-        }else{
+        } else {
             return false;
         }
-	}
-	
-	public boolean onDeactive() {
-        if(!get() != previousState){
-            previousState =  get();
+    }
+
+    public boolean onDeactive() {
+        if (!get() != previousState) {
+            previousState = get();
             return true;
-        }else{
+        } else {
             return false;
         }
-	}
+    }
 }

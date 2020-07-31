@@ -1,10 +1,16 @@
 package frc.robot.io.hardware.hdw_util;
 
-import edu.wpi.first.wpilibj.Solenoid;
-
 /**
- * This class allows for the creation of objects that represent solenoids.
+ * TODO: Find Author and any revisions
+ * Author:
+ * 
+ * Revisions:
+ * 
+ * Description: 
+ * This class allows for the creation of objects that represent invertible solenoids.
  */
+
+import edu.wpi.first.wpilibj.Solenoid;
 
 public class InvertibleSolenoid extends Solenoid implements ISolenoid {
 
@@ -20,7 +26,7 @@ public class InvertibleSolenoid extends Solenoid implements ISolenoid {
         this.isInverted = isInverted;
     }
 
-    //This activates the Solenoid
+    //This activates the Solenoid (extends or retracts)
     @Override
     public void set(boolean state) {
         if (isInverted) {
@@ -30,6 +36,7 @@ public class InvertibleSolenoid extends Solenoid implements ISolenoid {
         }
     }
 
+    //This returns the state of the Solenoid (extended or not)
     public boolean get(){
         return (isInverted ? !super.get() : super.get());
     }

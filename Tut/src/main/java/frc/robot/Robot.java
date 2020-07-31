@@ -7,11 +7,16 @@
 
 package frc.robot;
 
+/**
+ * Description:
+ * This is the main class of the robot program.
+ */
 import edu.wpi.first.wpilibj.TimedRobot;
 import frc.robot.io.hardware.IO;
+import frc.robot.io.hardware.hdw_util.Limelight;
 import frc.robot.io.joysticks.JS_IO;
 import frc.robot.subsystems.*;
-
+import frc.robot.subsystems.drive.Drive;
 import edu.wpi.first.wpilibj.Relay;
 
 public class Robot extends TimedRobot {
@@ -24,6 +29,9 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     IO.init();
     JS_IO.init();
+
+    //TODO: does this belong here?
+    Limelight.init();
   }
 
   /**
@@ -33,6 +41,9 @@ public class Robot extends TimedRobot {
   public void robotPeriodic() {
     IO.update();
     JS_IO.update();
+
+    //TODO: does this belong here?
+    Limelight.sdbUpdate();
 
     IO.compressorRelay.set(IO.compressor.enabled() ? Relay.Value.kForward : Relay.Value.kOff);
 
@@ -68,6 +79,7 @@ public class Robot extends TimedRobot {
 
     // Actually applies the initialization code within init()
     ExampleSubsystem.init();
+    Drive.init();
 
   }
 
@@ -79,6 +91,7 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     // Actually assures the code for controlling this subsystem works as it should
     ExampleSubsystem.update();
+    Drive.update();
   }
 
   /**

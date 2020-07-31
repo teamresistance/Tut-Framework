@@ -1,29 +1,25 @@
 package frc.robot.io.joysticks;
-/*
-Original Author: Joey & Anthony
-Rewite Author: Jim Hofmann
-History:
-J&A - 11/6/2019 - Original Release
-JCH - 11/6/2019 - Original rework
-TODO: Exception for bad or unattached devices.
-      Auto config based on attached devices and position?
-      Add enum for jsID & BtnID?  Button(eLJS, eBtn6) or Button(eGP, eBtnA)
-Desc: Reads joystick (gamePad) values.  Can be used for different stick configurations
-    based on feedback from Smartdashboard.  Various feedbacks from a joystick are
-    implemented in classes, Button, Axis & Pov.
-    This version is using named joysticks to istantiate axis, buttons & axis
-*/
+
+/**
+ * Original Author: Joey & Anthony
+ * Rewite Author: Jim Hofmann
+ * 
+ * Revisions: J&A - 11/6/2019 - Original Release
+ *            JCH - 11/6/2019 - Original rework
+ * 
+ * Description:
+ * Similar to IO, JS_IO stores all of the buttons and axis for the Xbox
+ * controller/Joystick setup (organized by subsystem) so that buttons and JS
+ * axes and buttons can be used in code. Can be used for different stick configurations
+ * based on feedback from Smartdashboard. Various feedbacks from a joystick are
+ * implemented in classes, Button, Axis & Pov. This version is using named 
+ * joysticks to istantiate axis, buttons & axis
+
+ */
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-
 import frc.robot.io.joysticks.js_util.*;
-
-/**
- * Similar to IO, JS_IO stores all of the buttons and axis on the Xbox
- * controller/Joystick setup (organized by subsystem) so that buttons and JS
- * axes can be used to control certain things in code.
- */
 
 public class JS_IO {
     /**
@@ -48,6 +44,7 @@ public class JS_IO {
     // Drive
     public static Axis leftDrive = new Axis();
     public static Axis rightDrive = new Axis();
+    public static Button scaleDrive = new Button();
 
     // ExampleSubsystem
     public static Axis exampleAxis = new Axis();
@@ -111,6 +108,7 @@ public class JS_IO {
     private static void Norm3JS() {
         leftDrive.setAxis(leftJoystick, 1);
         rightDrive.setAxis(rightJoystick, 1);
+        scaleDrive.setButton(leftJoystick, 4);
 
         exampleAxis.setAxis(coJoystick, 1);
         exampleButton.setButton(coJoystick, 4);
@@ -120,6 +118,7 @@ public class JS_IO {
     private static void A_GP() {
         leftDrive.setAxis(gamePad, 1);
         rightDrive.setAxis(gamePad, 2);
+        scaleDrive.setButton(gamePad, 2);
 
         exampleAxis.setAxis(gamePad, 3);
         exampleButton.setButton(coJoystick, 4);

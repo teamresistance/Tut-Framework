@@ -1,15 +1,22 @@
 package frc.robot.io.hardware;
 
+/**
+ * TODO: author and revisions
+ * Author:
+ * 
+ * Revisions:
+ * 
+ * Description:
+ * IO stores all of the objects that represent physical components of the robot,
+ * organized by subsystem or purpose.
+ */
+
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Relay;
 import frc.robot.io.hardware.hdw_util.*;
 
-/**
- * IO stores all of the objects that represent physical components of the robot,
- * organized by subsystem.
- */
 public class IO {
 
     // NavX

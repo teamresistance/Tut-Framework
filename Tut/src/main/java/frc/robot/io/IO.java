@@ -1,4 +1,4 @@
-package frc.robot.io.hardware;
+package frc.robot.io;
 
 /**
  * TODO: author and revisions
@@ -15,7 +15,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.Relay;
-import frc.robot.io.hardware.hdw_util.*;
+import frc.robot.io.hdw_util.*;
 
 public class IO {
 

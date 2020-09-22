@@ -1,4 +1,4 @@
-package frc.robot.io.joysticks.js_util;
+package frc.robot.io.js_util;
 /*
 Original Author: Sherya
 Rewite Author: Jim Hofmann

@@ -12,10 +12,10 @@ package frc.robot;
  * This is the main class of the robot program.
  */
 import edu.wpi.first.wpilibj.TimedRobot;
-import frc.robot.io.hardware.IO;
-import frc.robot.io.hardware.hdw_util.Limelight;
-import frc.robot.io.joysticks.JS_IO;
-import frc.robot.subsystems.*;
+import frc.robot.io.IO;
+import frc.robot.io.hdw_util.*;
+import frc.robot.io.JS_IO;
+import frc.robot.subsystems.*; 
 import frc.robot.subsystems.drive.Drive;
 import edu.wpi.first.wpilibj.Relay;
 

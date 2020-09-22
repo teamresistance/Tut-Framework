@@ -1,4 +1,4 @@
-package frc.robot.io.joysticks;
+package frc.robot.io;
 
 /**
  * Original Author: Joey & Anthony
@@ -19,7 +19,7 @@ package frc.robot.io.joysticks;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.io.joysticks.js_util.*;
+import frc.robot.io.js_util.*;
 
 public class JS_IO {
     /**

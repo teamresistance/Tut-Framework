@@ -4,8 +4,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.io.hardware.IO;
-import frc.robot.io.joysticks.JS_IO;
+import frc.robot.io.IO;
+import frc.robot.io.JS_IO;
 
 /**
  * Author: Kinfe

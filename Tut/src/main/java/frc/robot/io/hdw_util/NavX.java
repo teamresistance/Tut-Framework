@@ -1,4 +1,4 @@
-package frc.robot.io.hardware.hdw_util;
+package frc.robot.io.hdw_util;
 
 /**
  * TODO: author

@@ -13,8 +13,8 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.io.hardware.IO;
-import frc.robot.io.hardware.hdw_util.InvertibleDigitalInput;
+import frc.robot.io.IO;
+import frc.robot.io.hdw_util.*;
 
 public class ExampleSubsystem {
 

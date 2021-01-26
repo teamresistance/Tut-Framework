@@ -30,7 +30,6 @@ public class Robot extends TimedRobot {
     IO.init();
     JS_IO.init();
 
-    //TODO: does this belong here?
     Limelight.init();
   }
 
@@ -42,7 +41,6 @@ public class Robot extends TimedRobot {
     IO.update();
     JS_IO.update();
 
-    //TODO: does this belong here?
     Limelight.sdbUpdate();
 
     IO.compressorRelay.set(IO.compressor.enabled() ? Relay.Value.kForward : Relay.Value.kOff);
